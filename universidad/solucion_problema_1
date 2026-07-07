@@ -3,4 +3,3 @@ LEFT JOIN curso c on idCurso = asig.curso
 LEFT JOIN matricula mat on mat.idAsignatura = asig.idAsignatura
 left join alumno a on a.idAlumno = mat.idAlumno
 
-pruebas
