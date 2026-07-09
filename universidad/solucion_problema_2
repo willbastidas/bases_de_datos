@@ -1,0 +1,26 @@
+SELECT
+	i.idProfesor,
+	p.nombre as "profesor",
+	p.apellido1 as "apellido",
+	a.nombre as "materia"
+from impartir i
+left JOIN profesor p on p.idProfesor = i.idProfesor
+LEFT JOIN asignatura a on a.idAsignatura = i.idAsignatura
+order by i.idProfesor ASC
+
+-- esta esta mal porque la tabla que tiene que materia imparte cada profesor que se llama "impartir"
+-- tiene que el id 1 del profesor tiene 6 materias pero este resultado dice que solo da 2
+-- esto quiere decir que la tabla de asignaturas esta incompleta
+-- con una comprobacion se demuestra que la tabla de relacion tienes mas informacion que la tabla de alumnos
+select
+	a.coordinador,
+	p.nombre as "profesor",
+	p.apellido1 as "apellido",
+	a.nombre as "materia" from asignatura a
+left join profesor p on a.coordinador = p.idProfesor
+order by a.coordinador ASC
+
+SELECT * from asignatura a
+left JOIN profesor p on a.coordinador = p.idProfesor
+where a.coordinador = "PR001" or a.nombre in ("Algebra lineal", "Gestión de datos", "Programación", "Algorítmica", "Minería de texto y procesamiento del lenguaje natural (PNL)",
+"Técnicas escalables en aprendizaje automático")

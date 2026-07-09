@@ -1,0 +1,8 @@
+SELECT
+	p.nombre,
+	p.apellido1,
+	a.curso 
+from asignatura a
+left JOIN impartir i on i.idAsignatura = a.idAsignatura
+LEFT JOIN profesor p on p.idProfesor = i.idProfesor
+ORDER BY p.idProfesor ASC
