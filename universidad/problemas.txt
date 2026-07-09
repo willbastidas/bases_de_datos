@@ -1,0 +1,7 @@
+1) a que curso pertenece cada alumno?
+
+2) que materia imparte cada profesor?
+
+3) que materia ve cada alumno?
+
+4) a que curso imparte clases cada profesor?
